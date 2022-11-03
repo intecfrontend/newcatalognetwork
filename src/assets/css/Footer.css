@@ -1,0 +1,122 @@
+/*
+     ___         _           
+    | __|__  ___| |_ ___ _ _ 
+    | _/ _ \/ _ \  _/ -_) '_|
+    |_|\___/\___/\__\___|_|  
+
+    All the following style are applied
+    to the footer
+
+*/
+footer { 
+    background-color: var(--grey-5); 
+    height: 50px;
+    max-height: 50px;
+    min-height: 50px;
+    position: relative;
+    width: 100%;
+    z-index: 101;
+}
+footer .footerWrapper {
+    display: flex;
+    font-size: 10px;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 99;
+}
+footer .footerSocial,
+footer .footerProtection,
+footer .footerPrivacy { 
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+footer a { 
+    border-right: 1px solid var(--grey-50);
+    color: var(--grey-80); 
+    padding: 0 5px 
+}
+footer a:last-child { border-right: unset; }
+
+
+footer h2 { font-family: 'openSans', sans-serif; font-size: 11px }
+footer .footerSocial a.fb::after,
+footer .footerSocial a.insta::after,
+footer .footerSocial a.li::after { bottom: -1px }
+footer .footerSocial a.fb:hover .icon { color: var(--facebook) }
+footer .footerSocial a.insta:hover .icon { color: var(--instagram) }
+footer .footerSocial a.li:hover .icon { color: var(--linkedin) }
+footer .footerSocial a.fb::after { border-bottom: 1px solid var(--facebook) }
+footer .footerSocial a.insta::after { border-bottom: 1px solid var(--instagram) }
+footer .footerSocial a.li::after { border-bottom: 1px solid var(--linkedin) }
+footer .footerSocial .icon { height: 25px; padding: 5px; width: 25px }
+footer .footerProtection a {
+    align-items: center;
+    animation: popUp 1.5s 4;
+    animation-timing-function: ease-out;
+    background-color: var(--grey-50);
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    height: 36px;
+    margin: 0 auto;
+    padding: 5px;
+    transition: .25s;
+    width: 36px;
+}
+footer .footerProtection a::after {
+    border-bottom: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--grey-50);
+    bottom: -9px;
+    height: 0;
+    left: 50%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    position: absolute;
+    right: unset;
+    transform: translateX(-50%);
+    width: 0;
+}
+footer .footerProtection a:hover { width: 200px }
+footer .footerProtection a span { display: none; min-width: max-content; opacity: 0 }
+footer .footerProtection a:hover span { opacity: 1; display: block }    
+footer .footerProtection .icon { height: 25px; width: 25px }
+footer .footerSocial a { display: flex; align-items: center;}
+footer .footerSocial a::after { content: unset;}
+footer .footerSocial figure {
+    height: 25px;
+    padding: 5px;
+    overflow: hidden;
+    width: 140px;
+    position: relative;
+    margin: 0;
+}
+footer .footerSocial img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+}
+
+@keyframes popUp {
+    0% { transform: translateY(0) }
+    20% { transform: translateY(-3px); animation-timing-function: ease-out }
+    50% { transform: translateY(-5px); animation-timing-function: ease-in }
+    100% { transform: translateY(0); animation-timing-function: ease-out }
+}
+@media only screen and (max-width: 768px) {
+    footer { height: 40px; max-height: 40px; min-height: 40px }
+    /* footer .footerPrivacy { gap: 20px } */
+    footer a { padding: 0 20px;}
+    footer .footerProtection,
+    footer .footerSocial { display: none }
+}

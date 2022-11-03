@@ -1,0 +1,285 @@
+/*
+     _  _          _           _   _          
+    | \| |__ ___ _(_)__ _ __ _| |_(_)___ _ _  
+    | .` / _` \ V / / _` / _` |  _| / _ \ ' \ 
+    |_|\_\__,_|\_/|_\__, \__,_|\__|_\___/_||_|
+                    |___/                     
+        
+    All the following style are applied
+    to the navigation and all its components
+
+    Table of contents:
+    -  # General
+    -  # Buttons
+    -  # Networks
+    -  # Media queries
+
+*/
+
+/* # General */
+
+nav {
+  background-color: white;
+  color: var(--grey-50);
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  height: 90px;
+  position: fixed;
+  transform: translateY(-50px);
+  transition: 0.25s;
+  width: 100%;
+  border-bottom: 1px solid var(--grey-5);
+  z-index: 101;
+}
+nav#active {
+  z-index: 152;
+}
+nav.active {
+  transform: translateY(0);
+}
+nav a,
+nav a:hover {
+  color: var(--grey-50);
+}
+nav a::after {
+  color: var(--grey-50);
+  content: unset;
+}
+nav .nav_menu {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+}
+nav .nav_menu li {
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  line-height: 19px;
+  margin: 0 5px;
+  padding: 5px;
+  position: relative;
+  transition: 0.25s;
+}
+nav .navLogo {
+  height: 100%;
+  transform-origin: center;
+  transition: transform 0.25s;
+  width: 55px;
+  position: relative;
+}
+nav .navLogo:hover {
+  transform: scale(1.1);
+}
+nav .navLogo img {
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-0%, -50%);
+  width: auto;
+  padding: 5px;
+}
+nav .navLogo img.city {
+  left: 187%;
+  padding: 10px;
+}
+nav .navLogo img.city.fr {
+  left: 180%;
+  padding: 11px;
+}
+nav .navLogo img.promonetwork {
+  left: 236%;
+  padding: 10px;
+}
+
+nav .navLogo img.promonetwork.fr {
+  left: 245%;
+  padding: 13px;
+}
+
+nav .nav_menu .lang {
+  cursor: pointer;
+  width: 75px;
+}
+nav .nav_menu .lang_options {
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.25s;
+  width: 100%;
+  z-index: -1;
+}
+
+/* # Buttons */
+
+nav .nav_buttons {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  margin-left: auto;
+}
+nav .nav_buttons .nav_button {
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  font-family: 'openSans', sans-serif;
+  font-size: 10px;
+  gap: 5px;
+  height: 30px;
+  justify-content: space-around;
+  padding: 5px 15px;
+  transition: 0.25s;
+  position: relative;
+  border: 1px solid var(--cn);
+}
+nav .nav_buttons .nav_button .icon {
+  height: 15px;
+  width: 15px;
+}
+nav .nav_buttons .nav_button:hover > .lang_options,
+nav .nav_buttons .nav_button .lang_options:hover {
+  opacity: 1;
+  transform: scaleY(1);
+  z-index: 1;
+}
+nav .nav_buttons .nav_button .lang_options a {
+  border-radius: 0;
+  display: block;
+  line-height: normal;
+  padding: 10px;
+  width: 100%;
+}
+nav .nav_buttons .nav_button:hover,
+/* nav .nav_buttons .nav_button.active, */
+nav .nav_buttons .nav_button .lang_options a:hover {
+  background-color: var(--grey-5);
+}
+
+.nav_button.my_company {
+  /* background-color: var(--cn); */
+  border: 1px solid var(--cn);
+  color: var(--cn);
+}
+.nav_button.my_company:hover {
+  background-color: var(--cn) !important;
+  color: white !important;
+}
+
+.nav_button.network {
+  background-color: var(--cn);
+  border: 1px solid var(--cn);
+  color: white;
+}
+.nav_button.network:hover {
+  background-color: transparent !important;
+  color: var(--cn) !important;
+}
+
+/* # Networks */
+
+nav .networks {
+  background-color: var(--grey-5);
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 50px;
+  transform: translateY(0);
+}
+nav .networks img {
+  bottom: 0;
+  height: 100%;
+  left: 50%;
+  max-height: 29px;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: 1;
+}
+nav .networks img.logoOriginal {
+  z-index: 2;
+}
+nav .networks .networkLogo {
+  flex: 1;
+  position: relative;
+}
+nav .networks .networkLogo:hover > .logoOriginal {
+  opacity: 0;
+}
+nav .networks .networkLogo::after {
+  border: none;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: 0.25s;
+}
+nav .networks .networkLogo:hover:after {
+  transform: scaleY(1);
+}
+nav .networks .esn:after {
+  background-color: var(--esn);
+}
+nav .networks .cn:after {
+  background-color: var(--cn);
+}
+nav .networks .pn:after {
+  background-color: var(--cn);
+}
+nav .networks .kn:after {
+  background-color: var(--kn);
+}
+nav .networks .se:after {
+  background-color: var(--se);
+}
+nav .networks .sa:after {
+  background-color: var(--sa);
+}
+nav .networks .osn:after {
+  background-color: var(--main);
+}
+
+nav .networks .networkLogo.sa img {
+  width: 30%;
+}
+
+/* # Media queries */
+
+/* @media only screen and (max-width: 768px) { 
+    #top nav { display: none }
+    nav { 
+        background-color: transparent !important;
+        box-shadow: none !important;
+        height: 55px;
+        margin: 0 auto;
+        max-height: 55px;
+        padding: 10px 0;
+        top: unset;
+        transform: none;
+        width: 150px;
+    }
+    nav .nav_menu { padding: 0 }
+    nav .networks, 
+    nav .nav_menu .nav_buttons { display: none } 
+    nav .navLogo { height: auto; width: 100%; }
+    nav .navLogo .logo:first-child { display: none }
+    nav .navLogo .logo:last-child { display: flex }
+} */

@@ -1,0 +1,40 @@
+  /*
+     ___           _           _   _          
+    | _ \__ _ __ _(_)_ _  __ _| |_(_)___ _ _  
+    |  _/ _` / _` | | ' \/ _` |  _| / _ \ ' \ 
+    |_| \__,_\__, |_|_||_\__,_|\__|_\___/_||_|
+             |___/                            
+
+    All the following styles are applied
+    to the pagination component.
+*/
+#pagination {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    max-height: 75px;
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+}
+#pagination a { 
+    color: var(--grey-90);
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    margin: 0 5px;
+    padding: 5px;
+    position: relative;
+    text-decoration: none;
+    width: 25px;
+}
+#pagination a:hover { color: var(--sub) }
+#pagination a:hover::after { content: none; }
+#pagination .active { color: var(--sub); font-weight: bold }
+#pagination .icon { height: 100%; padding: 0; width: 100% }
+#pagination .pageLeftArrow:hover { transform: translateX(-3px) }
+#pagination .pageRightArrow:hover { transform: translateX(3px) }
+#pagination .pageNumber,
+#pagination .pageLeftArrow,
+#pagination .pageRightArrow { transition: 0.35s }
